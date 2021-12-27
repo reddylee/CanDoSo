@@ -9,29 +9,63 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Spacer()
-            Image("R&S").resizable()
-                .scaledToFit()
-            Spacer()
-            Image(/*@START_MENU_TOKEN@*/"4sq"/*@END_MENU_TOKEN@*/)
-                .resizable()
-                .scaledToFit()
-            Spacer()
+        
+        ZStack {
+            
+            Image("background")
+                .ignoresSafeArea()
             
             VStack{
-                Text("Welcome to CanDoSo!").padding(.all)
-                Text("欢迎光临耕读社！")
+                Spacer()
+                Image("logo")
+                Spacer()
+                HStack{
+                    Spacer()
+                    Image("card2")
+                    Spacer()
+                    Image("card3")
+                    Spacer()
+                
+                }
+                Spacer()
+                Image("dealbutton")
+                Spacer()
+                HStack{
+                    Spacer()
+                    VStack{
+                        Text("Player")
+                            .font(.title)
+                            .foregroundColor(Color.pink)
+                            .padding(.bottom, 10.0)
+                        Text("0")
+                            .font(.title)
+                            .foregroundColor(Color.pink)
+                    }
+                    Spacer()
+                    VStack{
+                        Text("CPU")
+                            .font(.title)
+                            .foregroundColor(Color.orange)
+                            .padding(.bottom, 10.0)
+                        Text("0")
+                            .font(.title)
+                            .foregroundColor(Color.orange)
+                }
+                    
+                    Spacer()
+            }
+                Spacer()
+                
             }
     }
         
         
     }
-}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
             .previewDevice("iPhone 13 Pro")
     }
+}
 }
